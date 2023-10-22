@@ -6,11 +6,13 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 07:50:09 by ydunay            #+#    #+#             */
-/*   Updated: 2023/10/22 07:50:10 by ydunay           ###   ########.fr       */
+/*   Updated: 2023/10/22 08:55:50 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
+#include "ft_printf.h"
 
 static int	int_len(int i)
 {
@@ -25,7 +27,7 @@ static int	int_len(int i)
 	return (len);
 }
 
-char	*ft_uitoa(int n)
+static char	*ft_uitoa(int n)
 {
 	char	*result;
 	int		len;
@@ -45,14 +47,14 @@ char	*ft_uitoa(int n)
 	return (result);
 }
 
-ft_print_unsigned(unsigned int n)
+int    ft_print_unsigned(unsigned int n)
 {
 	int		print_length;
 	char	*num;
 
 	print_length = 0;
 	if (!n)
-		print_length += write(1, '0', 1);
+		print_length += write(1, "0", 1);
 			// WRITE FONKSIYONU BASARILI BIR YAZMA DURUMUNDA YAZILAN BAYT SAYISINI VE HATA DURUMUNDA DA -1 DONDURUR !
 	else
 	{

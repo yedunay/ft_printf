@@ -6,7 +6,7 @@
 /*   By: ydunay <ydunay@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 07:50:14 by ydunay            #+#    #+#             */
-/*   Updated: 2023/10/22 07:50:15 by ydunay           ###   ########.fr       */
+/*   Updated: 2023/10/22 08:55:16 by ydunay           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_printchar(int c)
 
 static int	ft_printpercent(void)
 {
-	write(1, '%', 1);
+	write(1, "%", 1);
 	return (1);
 }
 
@@ -42,7 +42,7 @@ int	ft_formats(va_list arg, const char format)
 	if (format == 'u')
 		print_length += ft_print_unsigned(va_arg(arg, int));
 	if (format == 'x' || format == 'X')
-		print_length += ft_printhex(va_arg(arg, unsigned int), format);
+		print_length += ft_print_hex(va_arg(arg, unsigned int), format);
 	if (format == '%')
 		print_length += ft_printpercent();
 	return (print_length);
@@ -70,8 +70,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(arg);
 	return (print_length);
-}
-int	main(void)
-{
-	ft_printf("ahmer%c", 'c');
 }
