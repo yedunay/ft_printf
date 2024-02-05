@@ -25,7 +25,7 @@ This repository contains the implementation of `ft_printf`, a custom printf func
 1. Clone the repository:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/yedunay/ft_printf.git
     ```
 
 2. Navigate to the project directory:
