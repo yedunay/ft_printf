@@ -1,8 +1,8 @@
-DOTC = ft_itoa.c ft_print_hex.c ft_print_ptr.c ft_print_unsigned.c ft_printf.c ft_utils.c
+DOTC = ft_itoa.c ft_utilities.c ft_printf.c
    
 NAME = libftprintf.a
 OBJECTS = $(DOTC:.c=.o)
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
@@ -10,15 +10,12 @@ all: $(NAME)
 $(NAME):
 	$(CC) $(CFLAGS) -c $(DOTC)
 	ar rcs $@ $(OBJECTS)
-bonus:
-	$(CC) $(CFLAGS) -c $(DOTC)
-	ar rcs $(NAME) $(OBJECTS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS)	
 
 fclean: clean
 	rm -f $(NAME)
